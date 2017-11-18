@@ -21,7 +21,7 @@ const
   CSS_DIST_DIR = DIST_DIR + "/css",
   JS_DIST_DIR = DIST_DIR + "/js",
   FONTS_DIST_DIR = DIST_DIR + "/fonts",
-  IMAGES_DIST_DIR = DIST_DIR + "/images";
+  IMAGES_DIST_DIR = DIST_DIR + "/img";
 
 
 gulp.task("clean", function () {
