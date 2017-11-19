@@ -55,7 +55,8 @@ gulp.task("css:vendor", function () {
     "node_modules/bootstrap/dist/css/bootstrap.css",
     "node_modules/normalize.css/normalize.css",
     "node_modules/font-awesome/css/font-awesome.css",
-    "node_modules/multiselect/css/multi-select.css"
+    "node_modules/multiselect/css/multi-select.css",
+    "node_modules/toastr/build/toastr.min.css"
   ])
     .pipe(swallowError())
     .pipe(plugins.if(IS_DEVELOPMENT, plugins.sourcemaps.init()))
@@ -84,7 +85,8 @@ gulp.task("js:vendor", function () {
     "node_modules/jquery/dist/jquery.js",
     "node_modules/bootstrap/dist/js/bootstrap.js",
     "node_modules/multiselect/js/jquery.multi-select.js",
-    "node_modules/jquery-validation/dist/jquery.validate.js"
+    "node_modules/jquery-validation/dist/jquery.validate.js",
+    "node_modules/toastr/build/toastr.min.js"
   ])
     .pipe(swallowError())
     .pipe(plugins.if(IS_DEVELOPMENT, plugins.sourcemaps.init()))
