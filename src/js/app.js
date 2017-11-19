@@ -25,6 +25,7 @@ $("#our-form").on("submit", function (e) {
     $("#save").prop("disabled", true);
     $(".overlay-modal").show();
     setTimeout(function () {
+      $("#save").hide();
       $(".overlay-modal").hide();
       toastr.success("Name: " + this.inputName.value + '<br>' + "Desc: " + this.inputDesc.value);
     }, 1000);
