@@ -12,24 +12,23 @@ $(window).on("load", function () {
   $(".overlay").hide();
 });
 
-$("#save").click(function (e) {
-  // e.preventDefault();
-  $(".overlay").show();
-  $(this).prop("disabled", true);
-  $.ajax({
-    url: "/index.html",
-    type: "get",
-    dataType: "html",
-    success: function () {
-      $(".overlay").hide();
-    }
-  });
 
-  var dataFormsName = document.forms["our-form"].elements["inputName"].value;
-  var dataFormsDesc = document.forms["our-form"].elements["inputDesc"].value;
-
-  $("#alert-message").append("Name: " + dataFormsName + ";" + "<br>" + "Desc: " + dataFormsDesc + ";").show();
-  $(this).hide();
+$("#our-form").on("submit", function (e) {
+  e.preventDefault(); // Відміняєм поведінку
+  if (this.inputName.value === "" && this.inputDesc.value === "") {
+    toastr.error("Please fill out the fields!");
+  } else if (this.inputName.value === "") {
+    toastr.error("Please fill out the name field!");
+  } else if (this.inputDesc.value === "") {
+    toastr.error("Please fill out the desc field!");
+  } else {
+    $("#save").prop("disabled", true);
+    $(".overlay-modal").show();
+    setTimeout(function () {
+      $(".overlay-modal").hide();
+      toastr.success("Name: " + this.inputName.value + '<br>' + "Desc: " + this.inputDesc.value);
+    }, 1000);
+  }
 });
 
 // MultiSelect
