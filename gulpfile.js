@@ -83,7 +83,8 @@ gulp.task("js:vendor", function () {
   return gulp.src([
     "node_modules/jquery/dist/jquery.js",
     "node_modules/bootstrap/dist/js/bootstrap.js",
-    "node_modules/multiselect/js/jquery.multi-select.js"
+    "node_modules/multiselect/js/jquery.multi-select.js",
+    "node_modules/jquery-validation/dist/jquery.validate.js"
   ])
     .pipe(swallowError())
     .pipe(plugins.if(IS_DEVELOPMENT, plugins.sourcemaps.init()))
